@@ -16,7 +16,9 @@ import rclpy
 from rclpy.node import Node
 
 from std_msgs.msg import String
+from std_msgs.msg import Float32
 
+import time
 
 class MinimalSubscriber(Node):
 
@@ -24,13 +26,22 @@ class MinimalSubscriber(Node):
         super().__init__('minimal_subscriber')
         self.subscription = self.create_subscription(
             String,
-            'topic',
+            'number',
             self.listener_callback,
             10)
         self.subscription  # prevent unused variable warning
+        
+        self.publisher_ = self.create_publisher(Float32, 'diff', 10)
+        self.prev_time = time.time()
 
     def listener_callback(self, msg):
         self.get_logger().info('I heard: "%s"' % msg.data)
+
+        current_time = time.time()
+        diff_time = current_time - self.prev_time
+        self.prev_time = current_time
+
+        self.publisher_.publish(Float32(data = diff_time))
 
 
 def main(args=None):
