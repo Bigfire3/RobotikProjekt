@@ -14,14 +14,16 @@ Dieses Projekt umfasst zwei ROS 2 Pakete:
 
 ## **Anleitung zum Starten**
 1. ROS 2 Arbeitsbereich einrichten:
-   ```bash
-   mkdir -p ~/ros2_ws/src
-   cd ~/ros2_ws/src
-   git clone https://github.com/Bigfire3/RobotikProjekt
-   cd ..
-   colcon build
-   source install/setup.bash
+    ```bash
+    mkdir -p ~/ros2_ws/src
+    cd ~/ros2_ws/src
+    git clone https://github.com/Bigfire3/RobotikProjekt
+    cd ..
+    colcon build
+    source install/setup.bash
 2. Publisher starten:
+    ```bash
     ros2 run publisher_pkg publisher_node
 3. Subscriber starten
+    ```bash
     ros2 run subscriber_pkg subscriber_node
