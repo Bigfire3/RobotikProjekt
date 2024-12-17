@@ -13,7 +13,7 @@ Dieses Projekt umfasst zwei ROS 3 Pakete:
   - `rclpy`
   - `std_msgs`
 
-## **Anleitung zum Starten
+## **Anleitung zum Starten**
 1. ROS 2 Arbeitsbereich einrichten:
     ```bash
     mkdir -p ~/ros2_ws/src
@@ -23,13 +23,14 @@ Dieses Projekt umfasst zwei ROS 3 Pakete:
     colcon build
     source install/setup.bash
 
- des Publisher/Subscriber**
 2.1 Publisher starten:
     ```bash
     ros2 run publisher_pkg publisher_node
+
 2.2 Subscriber starten
     ```bash
     ros2 run subscriber_pkg subscriber_node
+    
 2.3 Follower starten (2.1 und 2.2 nicht vorrausgesetzt)
     ```bash
     ros2 run laserscan_follower drive_with_laserscanner
