@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/fabian/ros2_ws/install/laserscan_follower/lib/python3.10/site-packages",
+        "/home/fabian/ros2_ws/install/timing_tubaf_py/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/fabian/ros2_ws/install/laserscan_follower/lib/python3.10/site-packages",
+        "/home/fabian/ros2_ws/install/timing_tubaf_py/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
