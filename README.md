@@ -5,6 +5,7 @@ Dieses Projekt umfasst zwei ROS 3 Pakete:
 - `publisher_pkg`: Ein einfacher Publisher, der Nachrichten eines bestimmten Typs (`std_msgs/msg/String`) in einem festgelegten Intervall veröffentlicht.
 - `subscriber_pkg`: Ein Subscriber, der diese Nachrichten empfängt und in der Konsole ausgibt.
 - `laserscan_follower`: Eine einfache Node, welche die Daten des Laserscanners auswertet, um dem nächsten Hindernis zu folgen.
+- `line_follower`: Eine einfache Node, welche die Daten der Kamera als Graustufenbild auswertet, um einer hellen Linie auf dunklen Grund zu folgen.
 
 ## **Benötigte Abhängigkeiten**
 - ROS 2 (getestet mit Humble)
@@ -29,6 +30,9 @@ Dieses Projekt umfasst zwei ROS 3 Pakete:
 3. Subscriber starten
     ```bash
     ros2 run subscriber_pkg subscriber_node
-4. Follower starten (2. und 3. nicht vorrausgesetzt)
+4. Laserscan Follower starten (2. und 3. nicht vorrausgesetzt)
     ```bash
     ros2 run laserscan_follower drive_with_laserscanner
+5. Line Follower starten (2., 3. und 4. nicht vorrausgesetzt)
+    ```bash
+    ros2 run line_follower drive_with_laserscanner
