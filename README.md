@@ -36,3 +36,7 @@ Dieses Projekt umfasst zwei ROS 3 Pakete:
 5. Line Follower starten (2., 3. und 4. nicht vorrausgesetzt)
     ```bash
     ros2 run line_follower drive_with_laserscanner
+6. Line Follower und Laserscan Follower starten (2., 3., 4. und 5. nicht vorrausgesetzt)
+    ```bash
+    ros2 launch my_launch_package multi_node_launch.py
+

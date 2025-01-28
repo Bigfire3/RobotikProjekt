@@ -17,7 +17,7 @@ from cv_bridge import CvBridge, CvBridgeError
 class LineFollowing(rclpy.node.Node):
 
     def __init__(self):
-        super().__init__('line_following')
+        super().__init__('drive_with_line_follower')
 
         # definition of the parameters that can be changed at runtime
         self.declare_parameter('boundary_left', 90)
@@ -46,7 +46,7 @@ class LineFollowing(rclpy.node.Node):
         self.subscription  # prevent unused variable warning
 
         # create publisher for driving commands
-        self.publisher_ = self.create_publisher(Twist, 'cmd_vel', 1)
+        self.publisher_ = self.create_publisher(Twist, 'line_cmd_vel', 1)
 
         # create timer to periodically invoke the driving logic
         timer_period = 0.5  # seconds
@@ -86,9 +86,7 @@ class LineFollowing(rclpy.node.Node):
 
         # todo logic
         speed = 0.15
-        print(self.lineposition)
         turn = (220 - self.lineposition) / 100
-        print(turn)
         #if (turn < 2 and turn > -2): turn = 0.0
 
         # create message
@@ -101,8 +99,8 @@ class LineFollowing(rclpy.node.Node):
 
 
 def main(args=None):
+    print('Start line_following node.')
 
-    print('Hi from robotik_projekt line following.')
     rclpy.init(args=args)
 
     node = LineFollowing()
